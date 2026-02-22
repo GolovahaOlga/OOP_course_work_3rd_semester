@@ -5,6 +5,7 @@
 #include "libaddressbook.h"
 #include "libQTfile.h"
 #include "libQTmodelcontacts.h"
+#include "dbmanager.h"
 
 QT_BEGIN_NAMESPACE
 class QTableView;
@@ -28,6 +29,8 @@ private slots:
     void sortContacts();
     void saveToFile();
     void loadFromFile();
+    void loadFromDatabase();
+    void saveToDatabase();
 
 private:
     void createActions();
@@ -39,7 +42,7 @@ private:
     ContactsModel *m_model;
     QTableView *m_tableView;
     File m_file;
-
+    DatabaseManager m_dbManager;
     QAction *addAct;
     QAction *editAct;
     QAction *deleteAct;
@@ -47,6 +50,8 @@ private:
     QAction *sortAct;
     QAction *saveAct;
     QAction *exitAct;
+    QAction *loadDbAct;
+    QAction *saveDbAct;
 };
 
-#endif
+#endif // MAINWINDOW_H

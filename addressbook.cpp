@@ -46,25 +46,25 @@ void PhoneBook::sort_contacts(int field, bool ascending) {
     book.sort([field, ascending](const Contact& a, const Contact& b) {
         int cmp = 0;
         switch (field) {
-            case 1: 
+            case 1:
                 cmp = a.get_surname().compare(b.get_surname());
                 break;
-            case 2: 
+            case 2:
                 cmp = a.get_name().compare(b.get_name());
                 break;
-            case 3: 
+            case 3:
                 cmp = a.get_patronymic().compare(b.get_patronymic());
                 break;
-            case 4: 
+            case 4:
                 cmp = a.get_email().compare(b.get_email());
                 break;
-            case 5: 
+            case 5:
                 cmp = a.get_date().compare(b.get_date());
                 break;
-            case 6: 
+            case 6:
                 cmp = a.get_address().compare(b.get_address());
                 break;
-            default: 
+            default:
                 cmp = a.get_surname().compare(b.get_surname());
                 break;
         }

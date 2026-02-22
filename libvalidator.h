@@ -29,7 +29,6 @@ class Validator
         string get_norm() const;
         void set_error(string newerror);
         string get_error() const;
-        
         void set_success(bool newsuccess);
         bool get_success() const;
         static string normalize_text(const string &name);

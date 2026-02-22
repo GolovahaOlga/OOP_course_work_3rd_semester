@@ -7,17 +7,16 @@ File::File(const QString &filename)
 {}
 bool File::save(const PhoneBook &book) {
     QFile file(m_filename);
-       if (!file.open(QIODevice::WriteOnly | QIODevice::Text))
-           return false;
-
-       QTextStream out(&file);
-       out.setCodec("UTF-8");
-       std::list<Contact> contacts = book.get_all_contact();
-       for (const auto &c : contacts) {
-           out << contactToLine(c) << "\n";
-       }
-       file.close();
-       return true;
+    if (!file.open(QIODevice::WriteOnly | QIODevice::Text))
+        return false;
+    QTextStream out(&file);
+    out.setCodec("UTF-8");
+    std::list<Contact> contacts = book.get_all_contact();
+    for (const auto &c : contacts) {
+        out << contactToLine(c) << "\n";
+    }
+    file.close();
+    return true;
 }
 PhoneBook File::load() {
     PhoneBook book;

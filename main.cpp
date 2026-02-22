@@ -1,13 +1,10 @@
-#include "libuserinterface.h"
-#include "libcontact.h"
-#include "libfile.h"
-#include "libaddressbook.h"
-#include "libcoordinator.h"
-#include <iostream>
-using namespace std;
-int main()
+#include "mainwindow.h"
+#include <QApplication>
+
+int main(int argc, char *argv[])
 {
-    Coordinator coordinator;
-    coordinator.menu();
-    return 0;
+    QApplication a(argc, argv);
+    MainWindow w;
+    w.show();
+    return a.exec();
 }
